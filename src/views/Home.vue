@@ -7,18 +7,18 @@
           <input type="text" placeholder="Search for any IP address or leave empty to get your ip info"/>
           <i class="fas fa-chevron-right chevron"></i>
         </div>
-<!--        <IPInfo />-->
+        <IPInfo />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import IPInfo from "@/components/IPInfo";
+import IPInfo from "@/components/IPInfo";
 
 export default {
   name: "Home",
-  // components: { IPInfo },
+  components: { IPInfo },
 };
 </script>
 

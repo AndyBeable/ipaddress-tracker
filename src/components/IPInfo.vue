@@ -28,14 +28,31 @@ export default {
 <style lang="scss" scoped>
 .results {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #fff;
   gap: 5px;
   padding: 8px 8px 12px 8px;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .stat {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+
+  h3 {
+    text-transform: uppercase;
+    color: #969696;
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: .5rem;
+  }
+  span {
+    font-weight: 500;
+    font-size: 23px;
+    margin-bottom: .5rem;
+  }
 }
 </style>
