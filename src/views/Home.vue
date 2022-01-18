@@ -10,6 +10,7 @@
           />
           <i class="fas fa-chevron-right chevron"></i>
         </div>
+
         <IPInfo />
       </div>
       <div id="map" class="map"></div>
@@ -109,7 +110,9 @@ input::placeholder {
 }
 
 .map {
-  height: 100%;
-  z-index: 10;
+  height: calc(100vh);
+  margin-top: -267px;
+  display: flex;
+  z-index: -2;
 }
 </style>

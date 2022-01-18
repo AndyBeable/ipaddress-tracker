@@ -34,6 +34,7 @@ export default {
   gap: 5px;
   padding: 8px 8px 12px 8px;
   border-radius: 16px;
+  z-index: 2;
 }
 
 .stat {
