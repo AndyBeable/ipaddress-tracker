@@ -7,18 +7,18 @@
           <input type="text" placeholder="Search for any IP address or leave empty to get your ip info"/>
           <i class="fas fa-chevron-right chevron"></i>
         </div>
-        <IPInfo />
+<!--        <IPInfo />-->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import IPInfo from "@/components/IPInfo";
+// import IPInfo from "@/components/IPInfo";
 
 export default {
   name: "Home",
-  components: { IPInfo },
+  // components: { IPInfo },
 };
 </script>
 
@@ -26,11 +26,18 @@ export default {
 .header {
   display: flex;
   flex-direction: column;
-  height: 30vh;
-  max-height: 30vh;
+  height: 245px;
   background-image: url("~@/assets/pattern-bg.png");
   background-size: cover;
+  background-repeat: no-repeat;
   padding-top: 10px;
+
+  h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 29px;
+    font-weight: 500;
+  }
 }
 
 .search__container {
@@ -47,10 +54,10 @@ export default {
 
 input {
   width: 100%;
-  padding: 3px 2px;
+  padding: 28px 0px 28px 21px;
   border: none;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
   height: 30px;
 }
 input:focus {
@@ -58,26 +65,18 @@ input:focus {
 }
 
 input::placeholder {
-  padding-left: 5px;
   font-size: 16px;
   color: #b0afaf;
 }
-h1 {
-  color: #fff;
-  text-align: center;
-  font-size: 28px;
-  padding-bottom: 10px;
-  font-weight: 200;
-}
+
 
 .chevron {
   cursor: pointer;
   background: #000;
   color: #fff;
-  padding-left: 4px;
-  padding-right: 4px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  padding: 20.5px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
   display: flex;
   align-items: center;
 }
