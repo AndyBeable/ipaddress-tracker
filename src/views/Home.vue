@@ -34,14 +34,15 @@ export default {
 }
 
 .search__container {
-  width: 500px;
-  margin: 0 auto;
+  margin: 1rem 2rem;
 }
 
 .search__input {
   display: flex;
   justify-content: center;
   position: relative;
+  max-width: 500px;
+  margin: 1.5rem auto;
 }
 
 input {

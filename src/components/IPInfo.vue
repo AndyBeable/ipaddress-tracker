@@ -27,11 +27,11 @@ export default {
 
 <style lang="scss" scoped>
 .results {
-  position: absolute;
   display: flex;
   background-color: #fff;
   gap: 5px;
   padding: 8px 8px 12px 8px;
+  border-radius: 8px;
 }
 
 .stat {
