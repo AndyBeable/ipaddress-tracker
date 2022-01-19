@@ -5,13 +5,14 @@
         <h1>IP Address Tracker</h1>
         <div class="search__input">
           <input
+            v-model="queryIp"
             type="text"
             placeholder="Search for any IP address or leave empty to get your ip info"
           />
-          <i class="fas fa-chevron-right chevron"></i>
+          <i @click="getIpInfo" class="fas fa-chevron-right chevron"></i>
         </div>
 
-        <IPInfo />
+        <IPInfo v-if="ipInfo" />
       </div>
       <div id="map" class="map"></div>
     </div>
@@ -20,14 +21,17 @@
 
 <script>
 import IPInfo from "@/components/IPInfo";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import leaflet from "leaflet";
+import axios from "axios";
 
 export default {
   name: "Home",
   components: { IPInfo },
   setup() {
     let myMap;
+    const queryIp = ref("");
+    const ipInfo = ref(null);
     onMounted(() => {
       myMap = leaflet.map("map").setView([51.505, -0.09], 13);
 
@@ -47,6 +51,19 @@ export default {
         )
         .addTo(myMap);
     });
+    const getIpInfo = async () => {
+      try {
+        const data = await axios.get(
+          `https://geo.ipify.org/api/v2/country?apiKey=at_kHEbd5qtC3E4U0iK49Z8xzXEMcu0P&ipAddress=${queryIp.value}`
+        );
+
+        const result = data.data;
+        console.log(result);
+      } catch (err) {
+        alert(err.message);
+      }
+    };
+    return { queryIp, ipInfo, getIpInfo };
   },
 };
 </script>
