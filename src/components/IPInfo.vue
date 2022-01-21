@@ -41,7 +41,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 1rem;
+  padding: 1rem .5rem 0rem .5rem;
 
   h3 {
     text-transform: uppercase;
