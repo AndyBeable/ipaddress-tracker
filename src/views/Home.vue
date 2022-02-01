@@ -33,7 +33,7 @@ export default {
     const queryIp = ref("");
     const ipInfo = ref(null);
     onMounted(() => {
-      myMap = leaflet.map("map").setView([51.505, -0.09], 13);
+      myMap = leaflet.map("map").setView([51.505, -0.09], 9);
 
       leaflet
         .tileLayer(
@@ -66,6 +66,8 @@ export default {
           lat: result.location.lat,
           lng: result.location.lng
         };
+        leaflet.marker([ipInfo.value.lat, ipInfo.value.lng]).addTo(myMap);
+        myMap.setView([ipInfo.value.lat, ipInfo.value.lng], 13);
       } catch (err) {
         alert(err.message);
       }
