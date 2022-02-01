@@ -1,27 +1,28 @@
 <template>
-<div class="results">
-  <div class="stat">
-    <h3>IP Address</h3>
-    <span>8.8.8.8</span>
+  <div class="results">
+    <div class="stat">
+      <h3>IP Address</h3>
+      <span>{{ ipInfo.address }}</span>
+    </div>
+    <div class="stat">
+      <h3>Location</h3>
+      <span>{{ ipInfo.state }}</span>
+    </div>
+    <div class="stat">
+      <h3>Timezone</h3>
+      <span>UTC {{ ipInfo.timezone }}</span>
+    </div>
+    <div class="stat">
+      <h3>ISP</h3>
+      <span>{{ ipInfo.isp }}</span>
+    </div>
   </div>
-  <div class="stat">
-    <h3>Location</h3>
-    <span>London</span>
-  </div>
-  <div class="stat">
-    <h3>Timezone</h3>
-    <span>UTC 07:00</span>
-  </div>
-  <div class="stat">
-    <h3>ISP</h3>
-    <span>Google</span>
-  </div>
-</div>
 </template>
 
 <script>
 export default {
-  name: "IPInfo"
+  name: "IPInfo",
+  props: ["ipInfo"],
 };
 </script>
 
@@ -41,19 +42,19 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem .5rem 0rem .5rem;
+  padding: 1rem 0.5rem 0rem 0.5rem;
 
   h3 {
     text-transform: uppercase;
     color: #969696;
     font-weight: 500;
     font-size: 12px;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
   span {
     font-weight: 500;
     font-size: 23px;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 }
 </style>

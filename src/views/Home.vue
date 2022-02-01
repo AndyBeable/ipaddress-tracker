@@ -12,7 +12,7 @@
           <i @click="getIpInfo" class="fas fa-chevron-right chevron"></i>
         </div>
 
-        <IPInfo v-if="ipInfo" />
+        <IPInfo v-if="ipInfo" :ipInfo="ipInfo"/>
       </div>
       <div id="map" class="map"></div>
     </div>
@@ -58,7 +58,14 @@ export default {
         );
 
         const result = data.data;
-        console.log(result);
+        ipInfo.value = {
+          address: result.ip,
+          state: result.location.region,
+          timezone: result.location.timezone,
+          isp: result.isp,
+          lat: result.location.lat,
+          lng: result.location.lng
+        };
       } catch (err) {
         alert(err.message);
       }
